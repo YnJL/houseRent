@@ -25,8 +25,6 @@
 
 .contents01 {
     position: relative;
-    width: 58rem;
-    height: 75.4rem;
 }
 
 /* list */
@@ -118,7 +116,7 @@
 .table li {
     display: flex;
     align-items: center;
-    width: 81.2rem;
+    /* width: 81.2rem; */
     height: 4rem;
     text-align: center;
     font-size: 1.4rem;
@@ -136,37 +134,54 @@
     border-bottom: 1px solid var(--line-color);
 }
 
+.table li p {
+    flex:2
+}
+.table li p:first-child {
+    flex:1
+}
+
+/*
+.table li p {
+    width:8%
+}
 .table li p:nth-child(1) {
-    width: 7rem;
+    width: 6%;
 }
 .table li p:nth-child(2) {
-    width: 13rem;
+    width: 6%;
 }
 .table li p:nth-child(3) {
-    width: 10rem;
+    width: 10%;
 }
 .table li p:nth-child(4) {
-    width: 9rem;
+    width: 10%;
 }
 .table li p:nth-child(5) {
-    width: 9rem;
+    width: 10%;
 }
 .table li p:nth-child(6) {
     width: 10rem;
 }
 .table li p:nth-child(7) {
-    width: 7rem;
+    width: 10rem;
 }
 .table li p:nth-child(8) {
-    width: 7rem;
+    width: 10rem;
 }
 .table li p:nth-child(9) {
     width: 10rem;
 }
 .table li p:nth-child(10) {
-    width: 11.2rem;
+    width: 6rem;
 }
-
+.table li p:nth-child(11) {
+    width: 6rem;
+}
+.table li p:nth-child(12) {
+    width: 6rem;
+}
+*/
 /* btm_number */
 
 .btm_number {
@@ -207,10 +222,7 @@
     color: var(--color-green2);
 }
 
-/* 피험자 정보 등록 팝업 */
-.register_modal{
-  
-}
+/* 정보 등록 팝업 */
 .register_modal .info_wrap > div{
   display: flex;
   align-items: center;
@@ -223,11 +235,22 @@
   line-height: 100%;
   color: #436D61;
 }
+#modalForm > div > p {
+    display: inline-block;
+    width: 7%
+}
+#modalForm > div > input {
+    display: inline-block;
+    width: 42%;
+}
+#modalForm > div > select {
+    display: inline-block;
+}
 .register_modal .info_wrap > div span{
   font-weight: 500;
-font-size: 1.4rem;
-line-height: 100%;
-color: #303030;
+  font-size: 1.4rem;
+  line-height: 100%;
+  color: #303030;
 }
 
 .info_edit .info_wrap > div{
@@ -244,9 +267,9 @@ color: #303030;
 }
 .info_edit .info_wrap > div span{
   font-weight: 500;
-font-size: 1.4rem;
-line-height: 100%;
-color: #303030;
+  font-size: 1.4rem;
+  line-height: 100%;
+  color: #303030;
 }
 .info_edit .info_wrap input[type='text']{
   height: 3.6rem;

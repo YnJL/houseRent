@@ -5,17 +5,117 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>RoomInfo</title>
-	<!--<link rel="stylesheet" href="/css/reset.css">
+	<link rel="stylesheet" href="/css/reset.css">
 	<link rel="stylesheet" href="/css/common.css">
-	<link rel="stylesheet" href="/css/home.css">
-	<link rel="stylesheet" href="https://uicdn.toast.com/chart/latest/toastui-chart.min.css" />
-	<script src="https://uicdn.toast.com/chart/latest/toastui-chart.min.js"></script>
-	<script defer src="/js/main.js"></script> -->
+	<link rel="stylesheet" href="/css/rooms.css">
 </head>
 
 <body>
-
+	<div class="container">
+		<div class="title_wrap">
+			<h3 class="main_title">입주자 현황</h3>
+		</div>
+		<div class="btn_wrap">
+			<button class="btn bg_wh" onclick="">임차인 변동</button>
+		</div>
+		<div class="wrap1">
+			<div class="contents contents01">
+				<ul class="table" id="roomInfoTable">
+					<li class="first">
+						<p>호실</p>
+						<p>임차인</p>
+						<p>연락처</p>
+						<p>부동산</p>
+						<p>연락처</p>
+						<p>계약일</p>
+						<p>입주일</p>
+						<p>만기일</p>
+						<p>해약일</p>
+						<p>전월세</p>
+						<p>보증금</p>
+						<p>월세</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="popup popup1 register_modal">
+		<div class="popup_wrap">
+			<div class="modal w360">
+				<div class="modal_top">
+					<h3 class="modal_title" onclick="openModifyModal(101)">임차인 정보 등록</h3>
+				</div>
+				<div class="popup_contents">
+					<div class="info_wrap">
+						<form id="modalForm">
+							<div>
+								<p>호실</p>
+								<select name="roomNo" id="form_roomNo" onchange="roomChange()">
+									<option value="101" id="101">101</option>
+									<option value="201" id="201">201</option>
+									<option value="202" id="202">202</option>
+									<option value="203" id="203">203</option>
+									<option value="204" id="204">204</option>
+									<option value="301" id="301">301</option>
+									<option value="302" id="302">302</option>
+									<option value="303" id="303">303</option>
+									<option value="304" id="304">304</option>
+									<option value="401" id="401">401</option>
+									<option value="402" id="402">402</option>
+									<option value="403" id="403">403</option>
+								</select>
+							</div>
+							<div>
+								<p>임차인</p>
+								<input id="form_name" type="text" name="name">
+								<p>연락처</p>
+								<input id="form_phone" type="text" name="phone">
+							</div>
+							<div>
+								<p>부동산</p>
+								<input id="form_esName" type="text" name="esName">
+								<p>연락처</p>
+								<input id="form_esPhone" type="text" name="esPhone">
+							</div>
+							<div>
+								<p>계약일</p>
+								<input id="form_signDate" type="text" name="signDate">
+								<p>입주일</p>
+								<input id="form_inDate" type="text" name="inDate">
+							</div>
+							<div>
+								<p>만기일</p>
+								<input id="form_endDate" type="text" name="endDate">
+								<p>해약일</p>
+								<input id="form_outDate" type="text" name="outDate">
+							</div>
+							<div>
+								<p>전/월세</p>
+								<select name="signType" id="form_signType">
+									<option value="월세" id="월세">월세</option>
+									<option value="전세" id="전세">전세</option>
+								</select>
+							</div>
+							<div>
+								<p>보증금</p>
+								<input id="form_deposit" type="number" name="deposit">
+								<p>월세</p>
+								<input id="form_monthly" type="number" name="monthly">
+							</div>
+							<div>
+							</div>
+					</div>
+				</div>
+				<div class="bottom_btn_wrap">
+					<button onclick="closeModal(1)">취소하기</button>
+					<button onclick="insertRoomInfo()">등록하기</button>
+				</div>
+						</form>
+			</div>
+		</div>
+	</div>
 </body>
+<script src="/js/common.js"></script>
 <script src="/js/roomInfo.js"></script>
 
 </html>

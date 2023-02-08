@@ -3,10 +3,10 @@ package houseRents.vo;
 public class O1Vo {
 	String idx;
 	String roomNo;
-	String curName;
+	String name;
 	String phone;
-	String reName;
-	String rePhone;
+	String esName;
+	String esPhone;
 	String signDate;
 	String inDate;
 	String endDate;
@@ -17,8 +17,8 @@ public class O1Vo {
 	String searchKey;
 	@Override
 	public String toString() {
-		return "O1Vo [idx=" + idx + ", roomNo=" + roomNo + ", curName=" + curName + ", phone=" + phone + ", reName="
-				+ reName + ", rePhone=" + rePhone + ", signDate=" + signDate + ", inDate=" + inDate + ", endDate="
+		return "O1Vo [idx=" + idx + ", roomNo=" + roomNo + ", name=" + name + ", phone=" + phone + ", esName="
+				+ esName + ", esPhone=" + esPhone + ", signDate=" + signDate + ", inDate=" + inDate + ", endDate="
 				+ endDate + ", outDate=" + outDate + ", signType=" + signType + ", deposit=" + deposit + ", monthly="
 				+ monthly + ", searchKey=" + searchKey + "]";
 	}
@@ -35,11 +35,11 @@ public class O1Vo {
 	public void setRoomNo(String roomNo) {
 		this.roomNo = roomNo;
 	}
-	public String getCurName() {
-		return curName;
+	public String getName() {
+		return name;
 	}
-	public void setCurName(String curName) {
-		this.curName = curName;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getPhone() {
 		return phone;
@@ -47,17 +47,17 @@ public class O1Vo {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public String getReName() {
-		return reName;
+	public String getEsName() {
+		return esName;
 	}
-	public void setReName(String reName) {
-		this.reName = reName;
+	public void setEsName(String esName) {
+		this.esName = esName;
 	}
-	public String getRePhone() {
-		return rePhone;
+	public String getEsPhone() {
+		return esPhone;
 	}
-	public void setRePhone(String rePhone) {
-		this.rePhone = rePhone;
+	public void setEsPhone(String esPhone) {
+		this.esPhone = esPhone;
 	}
 	public String getSignDate() {
 		return signDate;

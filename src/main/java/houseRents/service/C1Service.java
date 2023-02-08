@@ -19,6 +19,9 @@ public class C1Service {
 	public List<C1Vo> getRoomInfoAll(){
 		return c1.selectAll();
 	}
+	public int putRoomInfoAll(C1Vo c1vo){
+		return c1.insertInfo(c1vo);
+	}
 //	public Map<String,Object> getBodyinfoByUser(Map<String, Object> params);
 //	public BodyinfoVo getBodyinfoBySubject(String subject_sid);
 //	public BodyinfoVo getBodyinfo(String sid);

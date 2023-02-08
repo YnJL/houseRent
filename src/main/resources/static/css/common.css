@@ -426,7 +426,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border: 1px solid #436D61;
   color: #436D61;
 }
-/* 페이지네이션 */
+
 /* 페이지네이션 */
 .pagenation_wrap{
   display: flex;
@@ -625,7 +625,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 
-/* 로그인 후 공통 header */
+/* 공통 header */
 header.header_wrap{
   width: calc(100% - 6.4rem);
   padding: 1.6rem 3.2rem;
@@ -641,7 +641,7 @@ header.header_wrap img{
   width: 100%;
 }
 
-/* 로그인 후 공통 레이아웃 */
+/* 공통 레이아웃 */
 section.section{
   width: 100%;
   display: flex;
@@ -653,7 +653,6 @@ section.section{
   min-height: calc(100vh - 6.7rem - 13.6rem);
 }
 .container{
-  width: calc(100% - 12rem);
   padding: 3rem 6rem;
   min-height: calc(100vh - 6.7rem - 13.6rem);
   border-left: 1px solid #E5E5E5;
@@ -883,6 +882,7 @@ footer{
   width: 36rem;
 }
 .modal{
+  width:45vw;
   min-width: 36rem;
   background: #FFFFFF;
   box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.05);

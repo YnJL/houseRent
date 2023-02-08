@@ -9,6 +9,7 @@ import houseRents.vo.C1Vo;
 public interface C1Mapper {
 
 	public List<C1Vo> selectAll();
+	public int insertInfo(C1Vo c1vo);
 //	public List<BodyinfoVo> selectBodyinfoByUser(Map<String, Object> params);
 //	public int selectBodyinfoCountByUser(String user_sid);
 //	public BodyinfoVo selectBodyinfoBySubject(String subject_sid);
