@@ -1,0 +1,269 @@
+@charset "utf-8";
+
+* {box-sizing: border-box;}
+
+/* 색상 */
+
+:root {
+    --color-white:#ffffff;
+    --line-color: #e5e5e5;
+    --color-gray: #999999;
+    --color-green: #6f9084;
+    --color-green2: #436d51;
+    --font-color: #555555;
+    --font-color2: #303030;
+}
+
+/* wrap */
+
+.wrap {
+    display: flex;
+    gap: 2.4rem;
+}
+
+/* contents01 */
+
+.contents01 {
+    position: relative;
+    width: 58rem;
+    height: 75.4rem;
+}
+
+/* list */
+.checkText {
+    color:red;
+    font-weight:bold;
+}
+.flex-col{
+    display: flex;
+    flex-direction: column;
+    height: 57px;
+}
+
+.input_list {
+    margin-top: 1.6rem;
+    width: 100%;
+}
+
+.input_list li {
+    display: flex;
+    padding-bottom: 1.6rem;
+    align-items: center;
+    height: 65px;
+}
+
+.input_list li.bg-gr {
+    justify-content: flex-start;
+}
+
+.input_list li p {
+    width: 12rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 100%;
+    color: #303030;
+}
+
+.input_list li input {
+    width: 35.6rem;
+}
+
+.input_list li .radio,
+.input_list li .checkbox {
+    display: flex;
+    /* margin-left: 8.6rem; */
+}
+
+.input_list li .radio label[for='radio01'] {
+    margin-right: 3.1rem;
+}
+
+.input_list li .checkbox {
+    width: 23.7rem;
+    justify-content: space-between;
+}
+
+/* btn */
+
+.btn_wrap {
+    position: absolute;
+    right: 3.2rem;
+    bottom: 3.2rem;
+}
+
+/* contents02 */
+
+.contents02 {
+    width: 87.6rem;
+    height: 75.4rem;
+}
+
+.sub_title_wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+.small {
+    color: var(--color-gray);
+    font-size: 1.2rem;
+}
+
+/* table */
+
+.table {
+    margin-top: 1.6rem;
+    width: 100%;
+}
+
+.table li {
+    display: flex;
+    align-items: center;
+    width: 81.2rem;
+    height: 4rem;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--font-color);
+}
+
+.table li:first-child {
+    background-color: var(--color-green);
+    color: var(--color-white);
+    font-weight: 600;
+}
+
+.table li:not(.first) {
+    border-bottom: 1px solid var(--line-color);
+}
+
+.table li p:nth-child(1) {
+    width: 7rem;
+}
+.table li p:nth-child(2) {
+    width: 13rem;
+}
+.table li p:nth-child(3) {
+    width: 10rem;
+}
+.table li p:nth-child(4) {
+    width: 9rem;
+}
+.table li p:nth-child(5) {
+    width: 9rem;
+}
+.table li p:nth-child(6) {
+    width: 10rem;
+}
+.table li p:nth-child(7) {
+    width: 7rem;
+}
+.table li p:nth-child(8) {
+    width: 7rem;
+}
+.table li p:nth-child(9) {
+    width: 10rem;
+}
+.table li p:nth-child(10) {
+    width: 11.2rem;
+}
+
+/* btm_number */
+
+.btm_number {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 48rem;
+    margin: 1.2rem auto 0;
+}
+
+.btm_number .arrow {
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid var(--line-color);
+    border-radius: 0.4rem;
+    cursor: pointer;
+}
+
+.btm_number .arrow img {
+    width: 1.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.btm_number .number li {
+    display: flex;
+    width: 35.2rem;
+    justify-content: space-around;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--font-color2);
+}
+
+.btm_number .number li p.select {
+    color: var(--color-green2);
+}
+
+/* 피험자 정보 등록 팝업 */
+.register_modal{
+  
+}
+.register_modal .info_wrap > div{
+  display: flex;
+  align-items: center;
+  height: 3.6rem;
+}
+.register_modal .info_wrap > div p{
+  width: 12rem;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 100%;
+  color: #436D61;
+}
+.register_modal .info_wrap > div span{
+  font-weight: 500;
+font-size: 1.4rem;
+line-height: 100%;
+color: #303030;
+}
+
+.info_edit .info_wrap > div{
+  display: flex;
+  align-items: center;
+  height: 3.6rem;
+}
+.info_edit .info_wrap > div p{
+  width: 12rem;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 100%;
+  color: #436D61;
+}
+.info_edit .info_wrap > div span{
+  font-weight: 500;
+font-size: 1.4rem;
+line-height: 100%;
+color: #303030;
+}
+.info_edit .info_wrap input[type='text']{
+  height: 3.6rem;
+  max-width: 17rem;
+  width: 100%;
+}
+.w-120 input[type='text']{
+  width: 12rem !important;
+}
+.flex-cen{
+  display: flex;
+  align-items: center;
+}
+.co-gr{
+  color: #436D61 !important;
+}
+.info_edit .info_wrap .dropbtn {
+  padding: 1rem 1.6rem;
+  height: 3.6rem;
+}

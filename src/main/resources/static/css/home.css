@@ -1,0 +1,265 @@
+
+.contents_wrap{
+  display: flex;
+  width: 100%;
+}
+.left_wrap{
+  /* width: 64.8rem; */
+  width: 50%;
+  margin-right: 2.4rem;
+}
+.right_wrap{
+  /* width: calc(100% - 64.8rem); */
+  width: 50%;
+}
+.container.home{
+  width: calc(100% - 12rem - 32rem);
+}
+/* 왼쪽 섹션 */
+.tester_num_wrap{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tester_num_wrap .tester_main{
+  padding: 3.2rem;
+  background: #5B8276;
+  border-radius: .4rem;
+  width: calc(19rem - 6.4rem);
+}
+.tester_num_wrap .tester_main > img{
+  width: 4.8rem;
+}
+.tester_num_wrap .tester_main p{
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 150%;
+  color: #FFFFFF;
+  margin-top: 2.4rem;
+}
+.tester_sub{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 2.4rem;
+}
+.tester_sub img{
+  width: 6.4rem;
+}
+.tester_sub p{
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 100%;
+  color: #303030;
+  margin-top: 1.6rem;
+}
+.tester_sub h3{
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 100%;
+  color: #436D61;
+  margin-top: 2.4rem;
+}
+
+.body_chart_wrap{
+  margin-top: 6rem;
+}
+.contents .body_chart_wrap .sub_title_wrap{
+  border-bottom: 0;
+}
+/* 기관 피험자 체질 집단 결과 통계 */
+.result_wrap{
+  display: flex;
+  align-items: center;
+}
+.result_wrap .total_wrap{
+  width: calc(24rem + 2.4rem);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.result_wrap .total_wrap > div{
+  width: 12rem;
+  height: 12rem;
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.result_wrap .total_wrap > div:nth-child(1){
+  margin-bottom: 2.4rem;
+
+}
+.result_wrap .total_wrap > div .color_yel{
+  width: 1.2rem;
+  height: .6rem;
+  background: #F8B30E;
+  margin-bottom: 0.8rem;
+}
+.result_wrap .total_wrap > div .color_bl{
+  width: 1.2rem;
+  height: .6rem;
+  background: #82B5F9;
+  margin-bottom: 0.8rem;
+}
+.result_wrap .total_wrap > div .color_red{
+  width: 1.2rem;
+  height: .6rem;
+  background: #F6805A;
+  margin-bottom: 0.8rem;
+}
+.result_wrap .total_wrap > div .color_gr{
+  width: 1.2rem;
+  height: .6rem;
+  background: #89D7C9;
+  margin-bottom: 0.8rem;
+}
+.result_wrap .total_wrap > div p{
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 100%;
+  color: #303030;
+}
+.result_wrap .total_wrap > div h3{
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 100%;
+  text-align: center;
+  color: #303030;
+  margin-top: 1.6rem;
+}
+.chart_wrap{
+  width: 24rem;
+  height: 24rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #82B5F9;
+  margin-left: 2.4rem;
+}
+.co-gr{
+  color: #436D61 !important;
+}
+.right_wrap > div:nth-child(1) .sub_title_wrap{
+  border-bottom: 0;
+}
+/* 피험자 등록정보 현황 */
+.subject_wrap{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.subject_wrap > div{
+  width: 33.3%;
+  margin-right: .8rem;
+  padding: 3.2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid #F7F7F7;
+  border-radius: 4px;
+  max-width: 23rem;
+}
+.subject_wrap > div > img{
+  width: 4.8rem;
+  margin-bottom: 1rem;
+}
+.subject_wrap > div:nth-child(1){
+  background: #5B8276;
+  border-radius: 4px;
+  border: 0;
+}
+.subject_wrap > div:nth-child(1) p{
+  color: #FFFFFF;
+}
+.subject_wrap > div p{
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 100%;
+  margin-bottom: 1.4rem;
+}
+.subject_wrap > div h3{
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 100%;
+  text-align: right;
+  color: #436D61;
+}
+.subject_wrap > div:nth-child(1) h3{
+  color: #FFFFFF;
+}
+.viewmore::after{
+  content: "";
+  width: 1.6rem;
+  height: 1.6rem;
+  background: url(/img/ico_plus.svg) center center no-repeat;
+  background-size: contain;
+  margin-left: 0.4rem;
+}
+.viewmore{
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 100%;
+  color: #436D61;
+}
+/* 공지사항 */
+.notice_wrap{
+}
+.notice_wrap > div{
+  margin: 2.4rem 0;
+}
+.notice_wrap p{
+  width: 80%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 100%;
+  color: #303030;
+  cursor: pointer;
+  transition: 0.1s;
+}
+.notice_wrap p:hover{
+  color: #5B8276;
+}
+.notice_wrap span{
+  display: inline-block;
+  width: 20%;
+  text-align: right;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 100%;
+  color: #999999;
+}
+@media (max-width : 1640px) {
+  .tester_num_wrap .tester_main p {
+    font-size: 1.4rem;
+}
+  .tester_sub p {
+    font-size: 1.4rem;
+}
+.tester_sub h3 {
+  font-size: 1.6rem;
+}
+.notice_wrap p {
+  width: 80%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 100%;
+  color: #303030;
+  cursor: pointer;
+  transition: 0.1s;
+}
+}

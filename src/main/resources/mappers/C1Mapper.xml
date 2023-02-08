@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="houseRents.mapper.C1Mapper">
+
+<select id="selectAll" resultType="houseRents.vo.C1Vo">
+	SELECT * FROM cur1277
+</select>
+
+<!-- 
+<select id="selectUser" resultType="com.inno.kprism.user.vo.UserVo">
+	SELECT * FROM users
+	WHERE
+		sid = #{sid}
+</select>
+<select id="selectManager" resultType="com.inno.kprism.user.vo.UserVo">
+	SELECT * FROM users
+	WHERE
+		sid = #{sid}
+</select>
+<select id="selectLoginUser" resultType="com.inno.kprism.user.vo.UserVo">
+	SELECT nu.sid,
+			nu.user_id,
+			nu.user_pw,
+			nu.`level`,
+			nu.user_name ,
+			nu.user_email ,
+			nu.user_tel ,
+			nu.`position` ,
+			nu.division ,
+			nu.addr ,
+			nu.regdate ,
+			ai.sid AS 'app_sid',
+			ai.name AS 'apparatus',
+			ai.code AS 'apparatus_code',
+			(SELECT user_name FROM users u WHERE ai.officer_sid = u.sid) AS 'officer'
+	FROM users nu,apparatus_info ai 
+	WHERE
+		user_id = #{user_id}
+		AND 
+		nu.apparatus_sid = ai.sid 
+</select>
+
+<select id="checkId" resultType="int">
+	SELECT 
+	COUNT(*) 
+	FROM users
+	WHERE
+	user_id = #{user_id}
+</select>
+
+<select id="checkEmail" resultType="int">
+	SELECT COUNT(*) FROM users
+	WHERE
+		user_email = #{user_email}
+</select>
+
+<insert id="insertUser">
+	INSERT INTO users (   user_id
+						, user_pw
+						, user_name
+						, user_email
+						, user_tel
+						, apparatus_sid
+						, apparatus_name
+						, position
+						, division
+						, addr )
+		VALUES (  #{user_id}
+				, (SELECT CONCAT('*', UPPER(SHA1(UNHEX(SHA1(#{user_pw}))))))
+				, #{user_name}
+				, #{user_email}
+				, #{user_tel}
+				, #{apparatus_sid}
+				, #{apparatus_name}
+				, #{position}
+				, #{division}
+				, #{addr} )
+</insert>
+
+<update id="updateUser" parameterType="com.inno.kprism.user.vo.UserVo">
+	UPDATE users
+		SET   user_id = #{user_id}
+			, user_pw = #{user_pw}
+			, user_name = #{user_name}
+			, user_email = #{user_email}
+			, user_tel = #{user_tel}
+			, apparatus_sid = #{apparatus_sid}
+			, apparatus_name = #{apparatus_name}
+			, position = #{position}
+			, division = #{division}
+			, addr = #{addr}
+	WHERE
+		sid = #{sid}
+</update>
+<select id="selectUserByAppaSid" resultType="com.inno.kprism.user.vo.UserVo">
+	SELECT * FROM users
+	WHERE
+		apparatus_sid = #{app_sid}
+</select>
+
+		
+<delete id="deleteUser">
+	DELETE FROM
+		users
+	WHERE
+		addr = #{addr}
+</delete>
+-->
+</mapper>
