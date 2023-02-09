@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>IncomeInfo</title>
+	<link rel="stylesheet" href="/css/reset.css">
+	<link rel="stylesheet" href="/css/common.css">
+	<link rel="stylesheet" href="/css/rooms.css">
+</head>
+
+<body>
+	<div class="container">
+		<div class="title_wrap">
+			<h3 class="main_title">입금 현황</h3>
+			<div>
+				<p>호실</p>
+				<select name="roomNo" id="form_roomNo" onchange="roomChange()">
+					<option value="101" id="101">101</option>
+					<option value="201" id="201">201</option>
+					<option value="202" id="202">202</option>
+					<option value="203" id="203">203</option>
+					<option value="204" id="204">204</option>
+					<option value="301" id="301">301</option>
+					<option value="302" id="302">302</option>
+					<option value="303" id="303">303</option>
+					<option value="304" id="304">304</option>
+					<option value="402" id="402">402</option>
+					<option value="403" id="403">403</option>
+				</select>
+			</div>
+		</div>
+		<div class="btn_wrap">
+			<button class="btn bg_wh" onclick="">임차인 변동</button>
+		</div>
+		<div class="wrap1">
+			<div class="contents contents01">
+				<ul class="table" id="roomInfoTable">
+					<li class="first">
+						<p>입금자</p>
+						<p>입금일</p>
+						<p>입금액</p>
+						<p>입금유형</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="popup popup1 register_modal">
+		<div class="popup_wrap">
+			<div class="modal w360">
+				<div class="modal_top">
+					<h3 class="modal_title" onclick="openModifyModal(101)">입금 정보 등록</h3>
+				</div>
+				<div class="popup_contents">
+					<div class="info_wrap">
+						<form id="modalForm">
+							<div>
+								<p>입금자</p>
+								<input id="form_inName" type="text" name="inName">
+								<p>입금일</p>
+								<input id="form_inDate" type="text" name="inDate">
+							</div>
+							<div>
+								<p>입금액</p>
+								<input id="form_inValue" type="text" name="inValue">
+								<p>입금유형</p>
+								<input id="form_type" type="text" name="type">
+							</div>
+							<div>
+								<p>입금문자</p>
+								<input id="form_inMsg" type="text" name="inMsg">
+							</div>
+					</div>
+				</div>
+				<div class="bottom_btn_wrap">
+					<button onclick="closeModal(1)">취소하기</button>
+					<button onclick="insertIncomeInfo()">등록하기</button>
+				</div>
+						</form>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="/js/common.js"></script>
+<script src="/js/incomeInfo.js"></script>
+
+</html>
