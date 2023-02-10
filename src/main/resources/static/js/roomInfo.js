@@ -18,19 +18,20 @@ function renderRoomInfo(list){
 	for (let i = 0; i < list.length; i++){
 		infoList[list[i].roomNo] = list[i];
 		if(list[i].roomNo==401) continue;
-		let row = `<li onclick="openModifyModal(${list[i].roomNo})">`;
-		row += `<p class="clickable">${list[i].roomNo}</p>`;
-		row += `<p class="clickable" >`+list[i].name+'</p>';
-		row += `<p class="clickable" >`+list[i].phone+'</p>';
-		row += `<p class="clickable" >`+list[i].esName+'</p>';
-		row += `<p class="clickable" >`+list[i].esPhone+'</p>';
-		row += `<p class="clickable" >`+list[i].signDate+'</p>';
-		row += `<p class="clickable" >`+list[i].inDate+'</p>';
-		row += `<p class="clickable" >`+list[i].endDate+'</p>';
-		row += `<p class="clickable" >`+list[i].outDate+'</p>';
-		row += `<p class="clickable" >`+list[i].signType+'</p>';
-		row += `<p class="clickable" >`+list[i].deposit+'</p>';
-		row += `<p class="clickable" >`+list[i].monthly+'</p>';
+		console.log(list[i].roomNo);
+		let row = '<li onclick="openModifyModal('+list[i].roomNo+')">';
+		row += '<p class="clickable" >'+list[i].roomNo+'</p>';
+		row += '<p class="clickable" >'+list[i].name+'</p>';
+		row += '<p class="clickable" >'+list[i].phone+'</p>';
+		row += '<p class="clickable" >'+list[i].esName+'</p>';
+		row += '<p class="clickable" >'+list[i].esPhone+'</p>';
+		row += '<p class="clickable" >'+list[i].signDate+'</p>';
+		row += '<p class="clickable" >'+list[i].inDate+'</p>';
+		row += '<p class="clickable" >'+list[i].endDate+'</p>';
+		row += '<p class="clickable" >'+list[i].outDate+'</p>';
+		row += '<p class="clickable" >'+list[i].signType+'</p>';
+		row += '<p class="clickable" >'+list[i].deposit+'</p>';
+		row += '<p class="clickable" >'+list[i].monthly+'</p>';
 		row += '</li>';
 		roomInfoTable.insertAdjacentHTML("beforeend",row);
 		if(list[i].signType=="월세") {

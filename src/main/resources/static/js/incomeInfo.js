@@ -109,14 +109,15 @@ async function insertRoomInfo(){
 	params.monthly = form_monthly.value;
 	console.log(params);
 	let response = await fetch("/roomInfo", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(params),
-		});
-		let result = await response.json();
-		console.log(result);
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify(params),
+	});
+	let result = await response.json();
+	console.log(result);
+	closeModal(1)
 }
 
 window.onload = function(){

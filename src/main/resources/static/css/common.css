@@ -921,7 +921,7 @@ footer{
   display: flex;
   border-top: 1px solid #E5E5E5;
 }
-.bottom_btn_wrap > button{
+.bottom_btn_wrap > div{
   width: 50%;
   padding: 1.8rem 0;
   font-weight: 600;
@@ -929,8 +929,9 @@ footer{
   line-height: 100%;
   text-align: center;
   color: #555555;
+  cursor: pointer;
 }
-.bottom_btn_wrap > button:last-child{
+.bottom_btn_wrap > div:last-child{
   font-weight: 600;
   font-size: 1.6rem;
   line-height: 100%;
