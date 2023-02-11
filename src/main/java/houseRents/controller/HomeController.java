@@ -31,7 +31,7 @@ public class HomeController {
 		mnv = new ModelAndView("rent");
 //		mnv.setViewName("income");
 		mnv.addObject("roomNo", roomNo);
-		return "income.html";
+		return "rentInfo.html";
 	}
 //	
 }

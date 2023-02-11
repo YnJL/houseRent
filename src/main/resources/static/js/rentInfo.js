@@ -1,8 +1,10 @@
 let infoList = {};
 
-async function getRoomInfo(){
+async function getRentInfoByRoom(){
+	let params = {};
+	params.roomNo = roomNo
 	let response = await fetch("/roomInfo", {
-		method: "GET",
+		method: "Post",
 		headers: {
 			"Content-Type": "application/json",
 		},
@@ -121,5 +123,7 @@ async function insertRoomInfo(){
 }
 
 window.onload = function(){
-	getRoomInfo();
+	console.log("js:"+param);
+	console.log("js:"+typeof param);
+	// getRoomInfo();
 }

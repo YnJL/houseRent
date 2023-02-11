@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="houseRents.mapper.RMapper">
+
+<select id="selectAll" resultType="houseRents.vo.RentVo">
+	SELECT * FROM current
+</select>
+<select id="selectByRoom" parameterType="String" resultType="houseRents.vo.RentVo">
+	SELECT * FROM current
+		WHERE roomNo = #{roomNo}
+</select>
+<select id="selectByName" parameterType="String" resultType="houseRents.vo.RentVo">
+	SELECT * FROM cur1277 A
+		LEFT JOIN current B On A.roomNo = B.roomNo 
+		WHERE A.name = #{name}
+</select>
+<insert id="insertInfo" parameterType="houseRents.vo.RentVo">
+	INSERT INTO current
+				( roomNo
+				, inDate
+				, inName
+				, inValue
+				, type
+				, inMsg )
+			VALUES
+				( #{roomNo}
+				, #{inDate}
+				, #{inName}
+				, #{inValue}
+				, #{type}
+				, #{inMsg} )
+</insert>
+<update id="updateRentInfo">
+		SET
+			  roomNo = #{roomNo}
+			, phone = #{phone}
+			, esName = #{esName}
+			, esPhone = #{esPhone}
+			, signDate = #{signDate}
+			, inDate = #{inDate}
+			, endDate = #{endDate}
+			, outDate = #{outDate}
+			, signType = #{signType}
+			, deposit = #{deposit}
+			, monthly = #{monthly}
+		WHERE
+			roomNo = #{roomNo}
+</update>
+
+<!-- 
+<select id="selectUser" resultType="com.inno.kprism.user.vo.UserVo">
+	SELECT * FROM users
+	WHERE
+		sid = #{sid}
+</select>
+<select id="selectManager" resultType="com.inno.kprism.user.vo.UserVo">
+	SELECT * FROM users
+	WHERE
+		sid = #{sid}
+</select>
+
+
+<update id="updateUser" parameterType="com.inno.kprism.user.vo.UserVo">
+	UPDATE users
+		SET   user_id = #{user_id}
+			, user_pw = #{user_pw}
+			, user_name = #{user_name}
+			, user_email = #{user_email}
+			, user_tel = #{user_tel}
+			, apparatus_sid = #{apparatus_sid}
+			, apparatus_name = #{apparatus_name}
+			, position = #{position}
+			, division = #{division}
+			, addr = #{addr}
+	WHERE
+		sid = #{sid}
+</update>
+<select id="selectUserByAppaSid" resultType="com.inno.kprism.user.vo.UserVo">
+	SELECT * FROM users
+	WHERE
+		apparatus_sid = #{app_sid}
+</select>
+
+		
+<delete id="deleteUser">
+	DELETE FROM
+		users
+	WHERE
+		addr = #{addr}
+</delete>
+-->
+</mapper>

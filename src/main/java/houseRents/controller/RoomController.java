@@ -30,7 +30,7 @@ public class RoomController {
 	public Map<String,Object> home(@RequestBody C1Vo c1vo) {
 		System.out.println(c1vo.toString());
 		Map<String,Object> resultMap = new HashMap<>();
-		resultMap.put("code", c1.putRoomInfoAll(c1vo));
+		resultMap.put("code", c1.putRoomInfo(c1vo));
 		return resultMap;
 	}
 }

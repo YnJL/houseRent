@@ -7,20 +7,26 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
-import houseRents.mapper.C1Mapper;
-import houseRents.vo.C1Vo;
+import houseRents.mapper.RMapper;
+import houseRents.vo.RentVo;
 
-@Service("c1Service")
-public class C1Service {
+@Service("rService")
+public class RService {
 	
 	@Autowired
-	private C1Mapper c1;
+	private RMapper r;
 	
-	public List<C1Vo> getRoomInfoAll(){
-		return c1.selectAll();
+	public List<RentVo> getRentInfoAll(){
+		return r.selectAll();
 	}
-	public int putRoomInfo(C1Vo c1vo){
-		return c1.insertInfo(c1vo);
+	public List<RentVo> getRentInfoByRoom(String roomNo){
+		return r.selectByRoom(roomNo);
+	}
+	public List<RentVo> getRentInfoByName(String name){
+		return r.selectByName(name);
+	}
+	public int putRentInfo(RentVo rvo){
+		return r.insertInfo(rvo);
 	}
 //	public Map<String,Object> getBodyinfoByUser(Map<String, Object> params);
 //	public BodyinfoVo getBodyinfoBySubject(String subject_sid);
