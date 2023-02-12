@@ -5,11 +5,11 @@
 <select id="selectAll" resultType="houseRents.vo.RentVo">
 	SELECT * FROM current
 </select>
-<select id="selectByRoom" parameterType="String" resultType="houseRents.vo.RentVo">
+<select id="selectByRoom" parameterType="houseRents.vo.RentVo" resultType="houseRents.vo.RentVo">
 	SELECT * FROM current
 		WHERE roomNo = #{roomNo}
 </select>
-<select id="selectByName" parameterType="String" resultType="houseRents.vo.RentVo">
+<select id="selectByName" parameterType="houseRents.vo.C1Vo" resultType="houseRents.vo.RentVo">
 	SELECT * FROM cur1277 A
 		LEFT JOIN current B On A.roomNo = B.roomNo 
 		WHERE A.name = #{name}

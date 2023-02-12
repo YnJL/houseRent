@@ -75,6 +75,7 @@ function openModifyModal(roomNo){
 	// 	if(opts[i].value==roomNo) opts[i].selected=true;
 	// }
 	console.log(roomNo);
+	renderRoomNo(form_roomNo);
 	document.getElementById(roomNo).selected = true;
 	form_name.value = infoList[roomNo].name;
 	form_phone.value = infoList[roomNo].phone;

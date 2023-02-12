@@ -1,98 +1,113 @@
 let infoList = {};
 
-async function getRentInfoByRoom(){
-	let params = {};
-	params.roomNo = roomNo
-	let response = await fetch("/roomInfo", {
-		method: "Post",
+async function getRentInfo(param){
+	let body = {};
+	let by = '';
+	if(parseInt(param)==param) {
+		by = 'byRoom';
+		body.roomNo = param;
+	} else {
+		by = 'byName'
+		body.name = param;
+	}
+	let r1 = await fetch("/roomInfo", {
+		method: "GET",
 		headers: {
 			"Content-Type": "application/json",
 		},
 	});
-	result = await response.json();
-	console.log(result);
-	renderRoomInfo(result.roomInfo);
+	let r2 = await fetch("/"+by, {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify(body)
+	});
+	res1 = await r1.json();
+	res2 = await r2.json();
+	renderRoomNo(form_roomNo);
+	renderNames(form_name, res1.roomInfo);
+	document.getElementById(param).selected = true;
+	renderRentInfo(res2.rentInfo)
 }
-function renderRoomInfo(list){
-	let roomInfoTable = document.querySelector("#roomInfoTable");
-	let js = 0, ws = 0, income=0;
-	let jb = 0, wb = 0;
+function renderRentInfo(list){
+	let rentInfoTable = document.querySelector("#rentInfoTable");
+	rentInfoTable.innerText = '';
+	let tot = 0, wtot = 0, btot = 0;
 	for (let i = 0; i < list.length; i++){
-		infoList[list[i].roomNo] = list[i];
-		if(list[i].roomNo==401) continue;
-		let row = `<li onclick="openModifyModal(${list[i].roomNo})">`;
-		row += `<p class="clickable">${list[i].roomNo}</p>`;
-		row += `<p class="clickable" >`+list[i].name+'</p>';
-		row += `<p class="clickable" >`+list[i].phone+'</p>';
-		row += `<p class="clickable" >`+list[i].esName+'</p>';
-		row += `<p class="clickable" >`+list[i].esPhone+'</p>';
-		row += `<p class="clickable" >`+list[i].signDate+'</p>';
-		row += `<p class="clickable" >`+list[i].inDate+'</p>';
-		row += `<p class="clickable" >`+list[i].endDate+'</p>';
-		row += `<p class="clickable" >`+list[i].outDate+'</p>';
-		row += `<p class="clickable" >`+list[i].signType+'</p>';
-		row += `<p class="clickable" >`+list[i].deposit+'</p>';
-		row += `<p class="clickable" >`+list[i].monthly+'</p>';
+		infoList[list[i].idx] = list[i];
+		let row = `<li onclick="openModifyModal(${list[i].idx})">`;
+		row += `<p class="clickable">${list[i].inName}</p>`;
+		row += `<p class="clickable">${list[i].inDate}</p>`;
+		row += `<p class="clickable">${list[i].inValue}</p>`;
+		row += `<p class="clickable">${list[i].inType}</p>`;
 		row += '</li>';
-		roomInfoTable.insertAdjacentHTML("beforeend",row);
-		if(list[i].signType=="월세") {
-			ws++;
-			if(list[i].monthly) income+=list[i].monthly*1;
-			wb+=list[i].deposit*1;
+		rentInfoTable.insertAdjacentHTML("beforeend",row);
+		if(list[i].inType=="월세") {
+			wtot+=list[i].inValue*1;
 		}
-		if(list[i].signType=="전세") {
-			js++;
-			jb+=list[i].deposit*1;
+		if(list[i].inType=="보증금") {
+			btot+=list[i].inValue*1;
 		}
+		tot+=list[i].inValue*1;
 	}
 	
 	let row = '<li></li>';
-	roomInfoTable.insertAdjacentHTML("beforeend",row);
-	if(wb>=10000) {
-		wb=Math.round(wb/1000)/10+"억원";
+	rentInfoTable.insertAdjacentHTML("beforeend",row);
+	if(tot>=10000*10000){
+		tot=Math.round(tot/1000/10000)/10+"억원";
+	} else if(tot>=10000) {
+		tot=Math.round(tot/1000)/10+"만원";
 	} else {
-		wb+="만원";
+		tot+="원";
 	}
-	if(jb>=10000) {
-		jb=Math.round(jb/1000)/10+"억원";
+	if(wtot>=10000*10000){
+		wtot=Math.round(wtot/1000/10000)/10+"억원";
+	} else if(wtot>=10000) {
+		wtot=Math.round(wtot/1000)/10+"만원";
 	} else {
-		jb+="만원";
+		wtot+="원";
+	}
+	if(btot>=10000*10000){
+		btot=Math.round(btot/1000/10000)/10+"억원";
+	} else if(tot>=10000) {
+		btot=Math.round(btot/1000)/10+"만원";
+	} else {
+		btot+="원";
 	}
 	row = `
 			<li>
 				<p>통계</p>
-				<p>전세 : ${js}</p>
-				<p>전세보증금 : ${jb}</p>
-				<p>월세 : ${ws}</p>
-				<p>월세보증금 : ${wb}</p>
-				<p>월세 총액 : ${income}만원</p>
+				<p>총 입금액 : ${tot}</p>
+				<p>보증금 : ${btot}</p>
+				<p>월세 : ${wtot}</p>
 			</li>
 			`;
-	roomInfoTable.insertAdjacentHTML("beforeend",row);
+	rentInfoTable.insertAdjacentHTML("beforeend",row);
 }
-function openModifyModal(roomNo){
+function openModifyModal(idx){
+	console.log(idx);
 	// let opts = document.querySelector("#form_roonNo").options;
 	// for(let i=0;i<opts.length;i++){
 	// 	if(opts[i].value==roomNo) opts[i].selected=true;
 	// }
-	console.log(roomNo);
-	document.getElementById(roomNo).selected = true;
-	form_name.value = infoList[roomNo].name;
-	form_phone.value = infoList[roomNo].phone;
-	form_esName.value = infoList[roomNo].esName;
-	form_esPhone.value = infoList[roomNo].phone;
-	form_signDate.value = infoList[roomNo].signDate;
-	form_inDate.value = infoList[roomNo].inDate;
-	form_endDate.value = infoList[roomNo].endDate;
-	form_outDate.value = infoList[roomNo].outDate;
-	console.log(infoList[roomNo].signType)
-	if(infoList[roomNo].signType!=null) document.getElementById(infoList[roomNo].signType).selected = true;
-	form_deposit.value = infoList[roomNo].deposit;
-	form_monthly.value = infoList[roomNo].monthly;
-	openModal(1);
+	// document.getElementById(roomNo).selected = true;
+	// form_name.value = infoList[roomNo].name;
+	// form_phone.value = infoList[roomNo].phone;
+	// form_esName.value = infoList[roomNo].esName;
+	// form_esPhone.value = infoList[roomNo].phone;
+	// form_signDate.value = infoList[roomNo].signDate;
+	// form_inDate.value = infoList[roomNo].inDate;
+	// form_endDate.value = infoList[roomNo].endDate;
+	// form_outDate.value = infoList[roomNo].outDate;
+	// console.log(infoList[roomNo].signType)
+	// if(infoList[roomNo].signType!=null) document.getElementById(infoList[roomNo].signType).selected = true;
+	// form_deposit.value = infoList[roomNo].deposit;
+	// form_monthly.value = infoList[roomNo].monthly;
+	// openModal(1);
 }
-function roomChange(){
-	openModifyModal(form_roomNo.selectedOptions[0].value);
+function selectChange(arg){
+	location.href="/"+arg.selectedOptions[0].value;
 }
 async function insertRoomInfo(){
 	let params = {};
@@ -123,7 +138,5 @@ async function insertRoomInfo(){
 }
 
 window.onload = function(){
-	console.log("js:"+param);
-	console.log("js:"+typeof param);
-	// getRoomInfo();
+	getRentInfo(param);
 }

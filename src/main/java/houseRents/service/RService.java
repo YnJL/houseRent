@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 
 import houseRents.mapper.RMapper;
+import houseRents.vo.C1Vo;
 import houseRents.vo.RentVo;
 
 @Service("rService")
@@ -19,11 +20,11 @@ public class RService {
 	public List<RentVo> getRentInfoAll(){
 		return r.selectAll();
 	}
-	public List<RentVo> getRentInfoByRoom(String roomNo){
-		return r.selectByRoom(roomNo);
+	public List<RentVo> getRentInfoByRoom(RentVo vo){
+		return r.selectByRoom(vo);
 	}
-	public List<RentVo> getRentInfoByName(String name){
-		return r.selectByName(name);
+	public List<RentVo> getRentInfoByName(C1Vo vo){
+		return r.selectByName(vo);
 	}
 	public int putRentInfo(RentVo rvo){
 		return r.insertInfo(rvo);

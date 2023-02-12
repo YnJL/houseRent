@@ -124,7 +124,7 @@
     color: var(--font-color);
 }
 
-.table li:first-child {
+.table > li:first-child {
     background-color: var(--color-green);
     color: var(--color-white);
     font-weight: 600;

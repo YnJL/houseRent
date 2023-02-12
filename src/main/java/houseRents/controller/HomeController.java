@@ -27,7 +27,7 @@ public class HomeController {
 //	
 	@GetMapping(value = "/{roomNo}")
 	public String income(@PathVariable String roomNo, ModelAndView mnv) {
-		System.out.println(roomNo);
+		System.out.println("page:"+roomNo);
 		mnv = new ModelAndView("rent");
 //		mnv.setViewName("income");
 		mnv.addObject("roomNo", roomNo);
